@@ -1,0 +1,57 @@
+xv-radio-input {
+    display: block;
+
+
+  &.disabled {
+    .input {
+      pointer-events: none;
+    }
+  }
+
+  > .input {
+    > a {
+      display: block;
+      color: inherit;
+      position: relative;
+      padding-left: 30px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+
+      &:before {
+        display: block;
+        width: 20px;
+        height: 20px;
+        background: $background-color;
+        content: "";
+        position: absolute;
+        left: 0px;
+        top: 5px;
+        border-radius: 20px;
+
+      }
+
+      &.active {
+        &:after {
+          display: block;
+          width: 10px;
+          height: 10px;
+          background: $main-color2;
+          content: "";
+          position: absolute;
+          left: 5px;
+          top: 10px;
+          border-radius: 15px;
+        }
+      }
+    }
+  }
+
+  &.horizontal {
+    > .input {
+      > a {
+        display: inline-block;
+        padding-right: 10px;
+      }
+    }
+  }
+}

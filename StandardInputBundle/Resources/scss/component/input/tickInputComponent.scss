@@ -1,0 +1,38 @@
+xv-tick-input {
+  display: block;
+  @include disable-select();
+  > label {
+    cursor: pointer;
+
+    > a.input {
+      display: inline-block;
+      color: #4C4A4A;
+      vertical-align: middle;
+
+      > i {
+        &.icon-check-mark-2 {
+          display: none;
+        }
+      }
+    }
+
+    > span {
+      margin-left: 5px;
+    }
+  }
+
+  &.ticked {
+    > label {
+      > a.input {
+        > i {
+          &.icon-square-line {
+            display: none;
+          }
+          &.icon-check-mark-2 {
+            display: inline;
+          }
+        }
+      }
+    }
+  }
+}

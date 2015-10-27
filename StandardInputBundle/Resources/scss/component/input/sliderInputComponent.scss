@@ -1,0 +1,163 @@
+xv-slider-input {
+  display: inline-block;
+  $handlerSize: 30px;
+  $helperSize: 10px;
+  height: $handlerSize;
+  position: relative;
+  width: 100%;
+
+  > .input {
+    width: calc(100% - #{$handlerSize});
+    height: 100%;
+    @include disable-select();
+
+    > .noUi-base {
+      position: relative;
+      width: 100%;
+      height: 100%;
+
+      &:after {
+        content: " ";
+        display: block;
+        position: absolute;
+        left: 0px;
+        right: -$handlerSize;
+        top: calc(50% - 1px);
+        height: 1px;
+        background: $main-color6;
+      }
+
+      > .noUi-origin {
+        position: absolute;
+        right: 0;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 1;
+        width: 1px;
+
+        > .noUi-handle {
+          $size: 30px;
+          background: $main-color2;
+          width: $handlerSize;
+          height: $handlerSize;
+          border-radius: $handlerSize;
+          text-align: center;
+          font-size: 13px;
+          cursor: -webkit-grab;
+
+          .mozilla & {
+            cursor: -moz-grab;
+          }
+
+          &.noUi-active {
+            cursor: -webkit-grabbing;
+
+            .mozilla & {
+              cursor: -moz-grabbing;
+            }
+          }
+
+          > i {
+            &:before {
+              line-height: $handlerSize;
+            }
+            > span {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  > .helpers {
+    left: 0px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    > div {
+      height: 100%;
+      width: 100%;
+      position: relative;
+
+      > i {
+        position: absolute;
+        background: $main-color;
+        height: $helperSize;
+        width: $helperSize;
+        border: 1px solid $main-color6;
+        border-radius: $helperSize;
+        display: block;
+        cursor: pointer;
+        &:hover {
+          background: #FFF;
+        }
+
+      }
+    }
+
+  }
+
+  &.horizontal {
+    > .helpers {
+      left: 0px;
+      right: #{$helperSize};
+      > div {
+        > i {
+          top: calc(50% - #{$helperSize / 2}) !important;
+        }
+      }
+
+    }
+  }
+
+  &.vertical {
+    height: 100%;
+    width: $handlerSize;
+
+    > .input {
+      height: calc(100% - #{$handlerSize});
+      width: 100%;
+
+      > .noUi-base {
+
+        &:after {
+          content: " ";
+          display: block;
+          position: absolute;
+          top: 0px;
+          bottom: -$handlerSize;
+          left: calc(50% - 1px);
+          width: 1px;
+          background: $main-color6;
+          height: auto;
+        }
+
+      }
+    }
+
+    > .helpers {
+      top: 0px;
+      bottom: #{$helperSize};
+
+      > div {
+        > i {
+          left: calc(50% - #{$helperSize / 2}) !important;
+        }
+      }
+    }
+
+  }
+
+
+  &.centered {
+    >.input>.noUi-base>.noUi-origin>.noUi-handle {
+      background: #FFF;
+      color: $main-color2;
+    }
+  }
+}

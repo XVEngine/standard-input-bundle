@@ -1,0 +1,104 @@
+xv-list-select-input {
+  display: block;
+  height: 100%;
+  background: #FFF;
+  color: $main-color;
+
+  > .scroll {
+    position: relative;
+    max-height: 100%;
+
+    > .list {
+      @include disable-select();
+      min-height: 100%;
+      position: relative;
+      padding-bottom: 40px;
+
+      > .item {
+        position: relative;
+        cursor: pointer;
+        border-bottom: 1px solid $main-color4;
+        > div {
+
+        }
+
+        &.active {
+          &:before {
+            $size: 10px;
+            left: 0px;
+            top: 50%;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+            border-left-color: $main-color2;
+            border-width: $size;
+            margin-top: $size * -1;
+            z-index: 5;
+          }
+        }
+      }
+
+      > footer {
+        position: absolute;
+        bottom: 0px;
+        left: 10px;
+        right: 10px;
+      }
+
+    }
+
+
+
+    > .empty {
+      display: none;
+      position: absolute;
+      top: 20px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      bottom: 0px;
+
+      h2 {
+        color: $main-color3;
+      }
+
+    }
+  }
+
+  &.disabled {
+    > .scroll {
+      > .list {
+        > .item {
+          pointer-events: none;
+        }
+      }
+    }
+  }
+
+  &.count-0 {
+    > .scroll {
+      overflow: auto !important;
+      height: 100%;
+      > .empty {
+        display: block;
+      }
+    }
+  }
+
+  &.without-footer {
+    > .scroll {
+
+      > .list {
+        padding-bottom: 0px;
+        > footer {
+          display: none;
+        }
+      }
+
+    }
+  }
+
+}

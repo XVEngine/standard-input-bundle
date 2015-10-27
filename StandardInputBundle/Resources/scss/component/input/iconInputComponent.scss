@@ -1,0 +1,65 @@
+xv-icon-input {
+  display: block;
+  > label {
+    display: block;
+
+    > div.icons {
+      > a {
+
+        display: inline-block;
+        width: 45px;
+        height: 45px;
+        background-color: $border-color;
+        color: #FFF;
+        margin-left: 5px;
+        font-size: 25px;
+        cursor: pointer;
+        text-align: center;
+
+        &:focus {
+          outline: 2px solid $border-color;
+        }
+
+        &:first-of-type {
+          margin-left: 0px;
+        }
+
+        &.active {
+          background-color: $main-color2;
+        }
+
+        > i {
+          &:before {
+            line-height: 43px;
+          }
+        }
+      }
+
+    }
+  }
+
+  &.required {
+    > label {
+      > span {
+        &:after {
+          content: "*";
+          color: $main-color2;
+        }
+      }
+    }
+  }
+
+  &.invalid {
+    > label {
+      > div {
+        border: 1px solid $main-color;
+      }
+    }
+  }
+
+  &.disabled {
+    pointer-events: none;
+    opacity: 0.3;
+  }
+
+}

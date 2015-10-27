@@ -1,0 +1,72 @@
+xv-select-input {
+  display: block;
+  > label {
+    display: block;
+
+    > div {
+      position: relative;
+      border: 1px solid $border-color;
+
+      > select {
+        width: 100%;
+        height: 43px;
+        padding-left: 10px;
+        border: 0px;
+        appearance: none;
+        -webkit-appearance: none;
+
+        &:-moz-focusring {
+          color: transparent;
+          text-shadow: 0 0 0 #000;
+        }
+
+        &:focus {
+          outline: 2px solid $border-color;
+        }
+      }
+
+      > .arrow {
+        position: absolute;
+        right: 2px;
+        top: 2px;
+        bottom: 2px;
+        width: 45px;
+        background: #FFF;
+        text-align: center;
+        pointer-events: none;
+
+        > i {
+          &:before {
+            line-height: 43px;
+          }
+        }
+      }
+    }
+  }
+
+  &.required {
+    > label {
+      > span {
+        &:after {
+          content: "*";
+          color: $main-color2;
+        }
+      }
+    }
+  }
+
+  &.invalid {
+    > label {
+      > div {
+        border-color: $main-color2;
+        outline-color: $main-color2;
+      }
+    }
+  }
+
+  &.disabled {
+    pointer-events: none;
+    opacity: 0.7;
+  }
+
+}
