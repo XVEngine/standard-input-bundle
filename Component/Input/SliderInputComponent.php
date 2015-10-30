@@ -10,7 +10,7 @@ class SliderInputComponent extends AbstractInputComponent
 
     public function initialize()
     {
-        $this->setComponentName('form.input.sliderInputComponent');
+        $this->setComponentName('input.sliderInputComponent');
         parent::initialize();
     }
 

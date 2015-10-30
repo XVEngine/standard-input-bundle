@@ -8,7 +8,7 @@ class SelectInputComponent extends AbstractInputComponent {
 
     
     public function initialize() {
-        $this->setComponentName('form.input.selectInputComponent');
+        $this->setComponentName('input.selectInputComponent');
         parent::initialize();
     }
 

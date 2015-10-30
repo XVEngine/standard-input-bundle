@@ -1,1 +1,10 @@
-{}
+{
+  "src" : {
+    "vendor" : [
+      {
+        "files" : "Resources/vendor/**/*.js",
+        "priority" : -100
+      }
+    ]
+  }
+}

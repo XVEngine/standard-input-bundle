@@ -17,7 +17,7 @@ class IconInputComponent extends AbstractInputComponent {
      * @author Krzysztof Bednarczyk
      */
     public function initialize() {
-        $this->setComponentName('form.input.iconInputComponent');
+        $this->setComponentName('input.iconInputComponent');
         $this->setParamByRef("icons", $this->icons);
         parent::initialize();
     }

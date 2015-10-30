@@ -19,7 +19,7 @@ class TextInputComponent extends AbstractInputComponent
     public function initialize()
     {
         $this->initValidationMessages();
-        $this->setComponentName('form.input.textInputComponent');
+        $this->setComponentName('input.textInputComponent');
         $this->setType("text");
         parent::initialize();
     }

@@ -9,7 +9,7 @@ class SelectListInputComponent extends AbstractInputComponent {
     private $items = [];
     
     public function initialize() {
-        $this->setComponentName('form.input.selectListInputComponent');
+        $this->setComponentName('input.selectListInputComponent');
         $this->setParamByRef("items", $this->items);
         parent::initialize();
     }

@@ -9,7 +9,7 @@ use XVEngine\Core\Component\Input\AbstractInputComponent;
 class RadioInputComponent extends AbstractInputComponent {
 
     public function initialize() {
-        $this->setComponentName('form.input.radioInputComponent');
+        $this->setComponentName('input.radioInputComponent');
         $this->setValidatorMessage("required", "You must select one of option");
         parent::initialize();
     }

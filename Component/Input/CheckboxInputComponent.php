@@ -7,7 +7,7 @@ use XVEngine\Core\Component\Input\AbstractInputComponent;
 class CheckboxInputComponent extends AbstractInputComponent {
 
     public function initialize() {
-        $this->setComponentName('form.input.checkboxInputComponent');
+        $this->setComponentName('input.checkboxInputComponent');
         $this->setValidatorMessage("required", "You must select one of option");
         parent::initialize();
     }
