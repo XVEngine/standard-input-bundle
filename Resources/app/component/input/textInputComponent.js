@@ -216,24 +216,31 @@
             return true;
         },
         "maxLength": function(value) {
-            if (this._maxLength) {
-                if (value.length > this._maxLength) {
-                    return false;
-                }
+            if (!this._maxLength) {
+                return true;
             }
-            return true;
+
+            if(this._type == "number"){ // for number
+                return !((value|0) > this._maxLength);
+            }
+
+
+            return !(value.length > this._maxLength);
         },
         "minLength": function(value) {
-            if (this._minLength) {
-                if(value.length == 0){
-                    return true; //here should be required type field
-                }
-
-                if (value.length < this._minLength) {
-                    return false;
-                }
+            if (!this._minLength) {
+                return true;
             }
-            return true;
+
+            if(this._type == "number"){ // for number
+                return !((value|0) < this._minLength);
+            }
+
+            if(value.length == 0){
+                return true; //here should be required type field
+            }
+
+            return ! (value.length < this._minLength);
         },
         "required": function(value) {
             if(!this._required){

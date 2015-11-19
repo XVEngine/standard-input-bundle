@@ -1,0 +1,136 @@
+xv-date-input {
+  display: block;
+
+  @include disable-select();
+  > label {
+    display: block;
+
+    > .label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    > input {
+      width: 100%;
+    }
+
+    > textarea {
+      width: 100%;
+      min-height: 150px;
+    }
+
+  }
+
+  &.required {
+    > label {
+      > .label:after {
+        content: " *";
+      }
+    }
+  }
+
+  .input {
+    border: 1px solid $border-color;
+    padding: 5px;
+    .ui-datepicker-header {
+      position: relative;
+      > .ui-datepicker-title {
+        width: 100%;
+        color: #CCC;
+        text-align: center;
+        line-height: 30px;
+      }
+      > a {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: auto;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+        padding-right: 10px;
+
+        &.ui-state-disabled {
+          color: #CCC;
+          cursor: default;
+        }
+
+        &.ui-datepicker-next {
+          right: 0;
+          justify-content: flex-end;
+          padding-right: 16px;
+        }
+
+        &.ui-datepicker-prev {
+          padding-left: 16px;
+          left: 0;
+        }
+      }
+    }
+
+    table {
+      margin: 0;
+      width: 100%;
+      > thead {
+        > tr {
+          > th {
+            font-size: 10px;
+            line-height: 30px;
+            color: #CCC;
+          }
+        }
+
+      }
+      > tbody {
+        > tr {
+          > td {
+            border: none;
+            padding: 0;
+            text-align: center;
+            vertical-align: middle;
+            height: 30px;
+            line-height: 30px;
+            &.ui-datepicker-unselectable {
+              color: #CCC;
+            }
+            &.ui-datepicker-today {
+              font-weight: bold;
+            }
+            > a {
+              display: block;
+              text-decoration: none;
+              color: $main-color2;
+
+              &:hover {
+                color: #FFF;
+                background: rgba($main-color2, 0.6);
+
+              }
+              &.ui-state-active {
+                color: #FFF;
+                background: $main-color2;
+              }
+            }
+          }
+        }
+      }
+    }
+    &.unselected {
+      table {
+        > tbody {
+          > tr {
+            > td {
+              > a {
+                &.ui-state-active {
+                  background: inherit;
+                  color: $main-color2;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

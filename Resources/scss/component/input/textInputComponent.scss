@@ -4,8 +4,6 @@ xv-text-input {
   > label {
     > span {
       display: block;
-      font-size: 16px;
-      font-weight: 500;
     }
 
     > input, textarea {
@@ -20,6 +18,7 @@ xv-text-input {
 
     > textarea {
       padding: 10px;
+      min-height: 150px;
     }
   }
 
